@@ -1,15 +1,14 @@
 FROM node:18-alpine
 
-# cd vào BE
-WORKDIR /app/BE
+WORKDIR /app
 
 # copy package trước để cache
-COPY BE/package*.json ./
+COPY package*.json ./
 
 RUN npm install
 
-# copy toàn bộ BE
-COPY BE .
+# copy toàn bộ source
+COPY . .
 
 EXPOSE 5000
 
