@@ -10,7 +10,7 @@ const openai = new OpenAI({
 
 /**
  * @swagger
- * /api/recipes/food-detail:
+ * /api/food-detail:
  *   post:
  *     summary: Gợi ý công thức chi tiết dựa trên tên món ăn
  *     tags: [Recipes]
@@ -28,7 +28,7 @@ const openai = new OpenAI({
  *       200:
  *         description: Công thức chi tiết món ăn
  */
-router.post("/food-detail", async (req, res) => {
+router.post("/", async (req, res) => {
   const { name } = req.body;
 
   if (!name) {
