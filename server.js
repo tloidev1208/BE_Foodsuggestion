@@ -24,7 +24,8 @@ const updatePost = require("./routes/posts/update");
 const recipeSaveRoutes = require("./routes/recipesave");
 const foodDetailRoutes = require("./routes/foodDetail");
 const recoveryRouter = require("./routes/recovery");
-
+const updateinfo = require("./routes/user/updateinfo");
+const getuserid = require("./routes/user/getuserid");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -43,13 +44,11 @@ app.use(
   })
 );
 
-
-
 /* =======================
    ✅ MIDDLEWARE CHUẨN
 ======================= */
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 app.use(cookieParser());
 
 /* =======================
@@ -85,6 +84,8 @@ app.use("/api/recipes", recipeSaveRoutes);
 app.use("/api/food-detail", foodDetailRoutes);
 app.use("/api/recovery", recoveryRouter);
 
+app.use("/api/user", updateinfo);
+app.use("/api/users", getuserid);
 /* =======================
    ✅ SWAGGER
 ======================= */
