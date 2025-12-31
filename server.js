@@ -26,6 +26,7 @@ const foodDetailRoutes = require("./routes/foodDetail");
 const recoveryRouter = require("./routes/recovery");
 const updateinfo = require("./routes/user/updateinfo");
 const getuserid = require("./routes/user/getuserid");
+const searchRoutes = require("./routes/search");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -64,6 +65,7 @@ mongoose
 /* =======================
    ✅ ROUTES
 ======================= */
+
 app.use("/api/food", foodRoutes);
 app.use("/api/recipes", recipeRoutes);
 app.use("/api/food-recipes", foodRecipesRoutes);
@@ -86,6 +88,9 @@ app.use("/api/recovery", recoveryRouter);
 
 app.use("/api/user", updateinfo);
 app.use("/api/users", getuserid);
+
+app.use("/api/search", searchRoutes);
+
 /* =======================
    ✅ SWAGGER
 ======================= */
