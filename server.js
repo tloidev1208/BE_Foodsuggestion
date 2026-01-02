@@ -75,8 +75,8 @@ app.use("/api/food-recipes", foodRecipesRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/serp-images", serpImagesRouter);
 
-app.use("/api/meal-planner", mealPlannerRoutes);
-app.use("/api/nutrition", nutritionRoutes);
+app.use("/api/recipes", mealPlannerRoutes);
+app.use("/api/recipes", nutritionRoutes);
 app.use("/api/strava", stravaRoutes);
 
 app.use("/api/posts", createPost);
