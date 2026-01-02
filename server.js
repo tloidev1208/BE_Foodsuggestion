@@ -27,6 +27,9 @@ const recoveryRouter = require("./routes/recovery");
 const updateinfo = require("./routes/user/updateinfo");
 const getuserid = require("./routes/user/getuserid");
 const searchRoutes = require("./routes/search");
+const adminStatsRoutes = require("./routes/adminStats");
+
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
@@ -90,7 +93,7 @@ app.use("/api/user", updateinfo);
 app.use("/api/users", getuserid);
 
 app.use("/api/search", searchRoutes);
-
+app.use("/api/admin", adminStatsRoutes);
 /* =======================
    ✅ SWAGGER
 ======================= */
